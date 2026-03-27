@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.11 0.07 290;
+    --foreground: 0.97 0.01 290;
+    --card: 0.2 0.07 290;
+    --card-foreground: 0.97 0.01 290;
+    --popover: 0.18 0.07 290;
+    --popover-foreground: 0.97 0.01 290;
+    --primary: 0.66 0.22 0;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.52 0.22 280;
+    --secondary-foreground: 0.99 0 0;
+    --muted: 0.22 0.06 290;
+    --muted-foreground: 0.78 0.06 290;
+    --accent: 0.66 0.22 0;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.27 0.09 290;
+    --input: 0.27 0.09 290;
+    --ring: 0.66 0.22 0;
+    --gold: 0.84 0.17 80;
+    --chart-1: 0.66 0.22 0;
+    --chart-2: 0.52 0.22 280;
+    --chart-3: 0.84 0.17 80;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.18 0.07 290;
+    --sidebar-foreground: 0.97 0.01 290;
+    --sidebar-primary: 0.66 0.22 0;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.22 0.06 290;
+    --sidebar-accent-foreground: 0.97 0.01 290;
+    --sidebar-border: 0.27 0.09 290;
+    --sidebar-ring: 0.66 0.22 0;
+  }
+
+  .dark {
+    --background: 0.11 0.07 290;
+    --foreground: 0.97 0.01 290;
+    --card: 0.2 0.07 290;
+    --card-foreground: 0.97 0.01 290;
+    --popover: 0.18 0.07 290;
+    --popover-foreground: 0.97 0.01 290;
+    --primary: 0.66 0.22 0;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.52 0.22 280;
+    --secondary-foreground: 0.99 0 0;
+    --muted: 0.22 0.06 290;
+    --muted-foreground: 0.78 0.06 290;
+    --accent: 0.66 0.22 0;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.27 0.09 290;
+    --input: 0.27 0.09 290;
+    --ring: 0.66 0.22 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: oklch(0.11 0.07 290);
+  }
+}
+
+@layer utilities {
+  .glow-pink {
+    box-shadow: 0 0 40px oklch(0.66 0.22 0 / 0.35);
+  }
+  .glow-violet {
+    box-shadow: 0 0 60px oklch(0.52 0.22 280 / 0.4);
+  }
+  .text-gold {
+    color: oklch(0.84 0.17 80);
+  }
+  .bg-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.09 0.07 290) 0%,
+      oklch(0.14 0.1 285) 50%,
+      oklch(0.12 0.09 280) 100%
+    );
+  }
+  .btn-pink {
+    background: linear-gradient(135deg, oklch(0.66 0.22 0), oklch(0.6 0.24 355));
+    color: white;
+    font-weight: 700;
+    border-radius: 9999px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .btn-pink:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  .card-surface {
+    background: oklch(0.2 0.07 290);
+    border: 1px solid oklch(0.27 0.09 290);
+    border-radius: 1rem;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
