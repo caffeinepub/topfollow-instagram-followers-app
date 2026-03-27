@@ -28,6 +28,7 @@ import {
   Instagram,
   Loader2,
   Menu,
+  Phone,
   Rocket,
   Send,
   Shield,
@@ -45,6 +46,7 @@ const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Reviews", href: "#reviews" },
+  { label: "Contact", href: "#contact" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -864,6 +866,94 @@ export default function App() {
             >
               <Download size={20} /> DOWNLOAD APK FREE
             </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ——— CONTACT THE OWNER ——— */}
+      <section
+        id="contact"
+        className="py-24"
+        style={{ background: "oklch(0.12 0.08 290)" }}
+      >
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Contact the Owner
+            </h2>
+            <p
+              className="text-lg max-w-md mx-auto"
+              style={{ color: "oklch(0.78 0.06 290)" }}
+            >
+              Have questions or need support? Reach out directly.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="max-w-sm mx-auto"
+            data-ocid="contact.card"
+          >
+            <div
+              className="flex flex-col items-center gap-6 p-8 rounded-3xl border"
+              style={{
+                background: "oklch(0.16 0.09 285)",
+                borderColor: "oklch(0.30 0.12 285)",
+                boxShadow: "0 0 60px oklch(0.52 0.22 280 / 0.15)",
+              }}
+            >
+              {/* Avatar */}
+              <div
+                className="w-[120px] h-[120px] rounded-full overflow-hidden border-4"
+                style={{
+                  borderColor: "oklch(0.52 0.22 280 / 0.6)",
+                  boxShadow: "0 0 30px oklch(0.52 0.22 280 / 0.3)",
+                }}
+              >
+                <img
+                  src="/assets/uploads/img_2841-019d2d74-8830-76c1-b04c-8faf9ebabe36-1.jpg"
+                  alt="MD Arbaz Mondol"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Name */}
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-white">
+                  MD Arbaz Mondol
+                </h3>
+                <p
+                  className="text-sm mt-1"
+                  style={{ color: "oklch(0.68 0.10 285)" }}
+                >
+                  App Owner & Developer
+                </p>
+              </div>
+
+              {/* Phone */}
+              <a
+                href="tel:7047724613"
+                data-ocid="contact.button"
+                className="flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold transition-all hover:scale-105"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.52 0.22 280), oklch(0.44 0.20 285))",
+                  boxShadow: "0 0 20px oklch(0.52 0.22 280 / 0.4)",
+                }}
+              >
+                <Phone size={18} />
+                7047724613
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
